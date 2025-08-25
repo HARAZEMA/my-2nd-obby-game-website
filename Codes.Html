@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obby — Codes</title>
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #0b1220;
+      --text: #fff;
+      --muted: #94a3b8;
+      --accent: #3b82f6;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      background: var(--panel);
+    }
+
+    .logo { font-weight: bold; font-size: 1.3rem; }
+    nav ul { list-style: none; display: flex; gap: 14px; margin: 0; padding: 0; }
+    nav a { color: var(--text); text-decoration: none; }
+
+    main { max-width: 900px; margin: 30px auto; padding: 0 16px; }
+    h1 { font-size: 1.8rem; margin-bottom: 12px; }
+
+    .codes-section { margin-top: 20px; }
+    .codes-list { display: grid; gap: 10px; margin-top: 10px; }
+    .code-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      font-family: monospace;
+      font-size: 1rem;
+    }
+    .expired { opacity: 0.5; text-decoration: line-through; }
+    .muted { color: var(--muted); font-size: 0.9rem; }
+
+    footer { text-align: center; padding: 20px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Haraos Indistory</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>Obby — Game Codes</h1>
+  <p class="muted">Below are the active and expired codes for Obby.</p>
+
+  <section class="codes-section">
+    <h2>✅ Active Codes</h2>
+    <div class="codes-list" id="activeCodes"></div>
+  </section>
+
+  <section class="codes-section">
+    <h2>❌ Expired Codes</h2>
+    <div class="codes-list" id="expiredCodes"></div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Obby — Harazema
+</footer>
+
+<script>
+  // Active and expired codes
+  const activeCodes = [
+    { code: 'Realse', reward: '1 Rebirth' },
+    { code: 'LAUNCH50', reward: '1 Rebirth' }
+  ];
+
+  const expiredCodes = [
+  ];
+
+  function renderCodes(listId, codes, isExpired = false) {
+    const container = document.getElementById(listId);
+    codes.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'code-item' + (isExpired ? ' expired' : '');
+      div.innerHTML = `<span>${item.code}</span><span class="muted">${item.reward}</span>`;
+      container.appendChild(div);
+    });
+  }
+
+  renderCodes('activeCodes', activeCodes);
+  renderCodes('expiredCodes', expiredCodes, true);
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

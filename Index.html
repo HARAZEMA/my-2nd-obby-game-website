@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Obby game</title>
+  <!-- CUSTOMIZABLE CSS THEME -->
+  <style>
+    /* ======= THEME COLORS ======= */
+    :root {
+      --bg-color: #0f172a;       /* Main background */
+      --header-color: #1e293b;   /* Header and footer background */
+      --text-color: #ffffff;     /* Main text color */
+      --btn-color: #3b82f6;      /* Button background */
+    }
+
+    /* ======= GLOBAL STYLES ======= */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    /* ======= HEADER ======= */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: var(--header-color);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    /* ======= HERO SECTION ======= */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero img {
+      max-width: 100%;
+      border-radius: 10px; /* Rounded corners for thumbnail */
+    }
+
+    /* ======= COMMUNITY SECTION ======= */
+    .community {
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* ======= BUTTON STYLES ======= */
+    .btn {
+      background: var(--btn-color);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    /* ======= FOOTER ======= */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--header-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER SECTION ================= -->
+  <header>
+    <!-- GAME OR BRAND NAME -->
+    <div class="logo"><!-- Replace with your logo or name --> Haraos Manapa</div>
+
+    <!-- NAVIGATION MENU -->
+     <nav>
+    <ul>
+      <li><a href="Codes.html">Game Codes</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero">
+    <!-- GAME THUMBNAIL -->
+    <img src="thumbnail.png" alt="Game Thumbnail"><!-- Replace 'thumbnail.png' with your image path -->
+
+    <!-- GAME TITLE -->
+    <h1><!-- Replace with your game name --> Obby</h1>
+
+    <!-- SHORT DESCRIPTION -->
+    <p><!-- Add your game description here --> A thrilling Roblox adventure awaits!</p>
+
+    <!-- PLAY BUTTON: UPDATE PLACE_ID -->
+    <a href="https://www.roblox.com/games/98991963834144/obby" class="btn">Play on Roblox</a>
+  </section>
+
+  <!-- ================= COMMUNITY SECTION ================= -->
+  <section class="community" id="community">
+    <h2>Join the Community</h2>
+    <!-- Replace with actual links -->
+    <p>Join our Discord: <a href="#">Discord Link</a></p>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>© <span id="year"></span> <!-- Replace with your game name --> Obby. All rights reserved.</p>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // Auto-update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
